@@ -1,26 +1,27 @@
 const express = require('express');
+const path = require('path');
 
 const port = 3000;
 const app = express();
 
 // Home Page
 app.get('/', function(req, res) {
-    res.send('Home Functionality Here!');
+    res.sendFile(path.join(__dirname + '/pages/home.html'));
 });
 
 // Login Page
 app.get('/login', function(req, res) {
-    res.send('Login Functionality Here!');
+    res.sendFile(path.join(__dirname + '/pages/login.html'));
 });
 
 // Forms Main Page
 app.get('/input', function(req, res) {
-    res.send('Forms And Such Here!');
+    res.sendFile(path.join(__dirname + '/pages/input.html'));
 });
 
 //Data Main Page
 app.get('/data', function(req, res) {
-    res.send('Data Options And Functionality Here!');
+    res.sendFile(path.join(__dirname + '/pages/data.html'));
 });
 
 // Port Setup
